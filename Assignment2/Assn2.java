@@ -6,13 +6,17 @@ import java.util.regex.Matcher;
 
 public class Assn2 {
     public static void main(String args[]){
+        //only proceed if filename given
         if(args.length > 0){
-            Pattern pattern = Pattern.compile("\\$\\^*(0|([123456789]|[123456789]\\d|[123456789]\\d\\d)(,\\d\\d\\d)*)((\\.\\d\\d)|$)");
+            //compile reg ex
+            Pattern pattern = Pattern.compile("\\$\\^*(0|([1-9]\\d{0,2})(,\\d{3})*)((\\.\\d{2})|$)");
             
             try{
+                //open file
                 FileReader fileReader = new FileReader(new File(args[0]));
                 BufferedReader bufferedReader = new BufferedReader(fileReader);
 
+                //read each line and determine if match
                 String curLine = bufferedReader.readLine();
                 while(curLine != null){
                     Matcher matcher = pattern.matcher(curLine);
@@ -26,12 +30,14 @@ public class Assn2 {
                     curLine = bufferedReader.readLine();
                 }
 
+                //close file stream
                 bufferedReader.close();
 
             }catch(Exception e){
                 System.out.println("Error reading from file");
             }
         }
+        //print usage and exit if no filename given
         else{
             System.out.println("Usage: java Assn2 [filename]");
         }

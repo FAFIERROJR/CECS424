@@ -1,17 +1,21 @@
 import re
 import sys
 
-pattern = "\\$\\^*(0|([123456789]|[123456789]\\d|[123456789]\\d\\d)(,\\d\\d\\d)*)((\\.\\d\\d)|$)"
+#define reg ex
+pattern = "\\$\\^*(0|([1-9]\\d{0,2})(,\\d{3})*)((\\.\\d{2})|$)\\Z"
 
+#print usage and exit if no filename given
 if(len(sys.argv) < 2):
     print("Usage: python Assn2.py [filename]")
     exit(0)
 
-print(str(sys.argv[1]))
+#open file
 file = open(str(sys.argv[1]), 'r')
 
+#read each line and determine if match
 curLine = file.readline();
 while curLine != "":
+    #discard newline char if present
     if curLine[-1] == "\n":
         curLine = curLine[0:-2]
     if re.match(pattern, curLine):
