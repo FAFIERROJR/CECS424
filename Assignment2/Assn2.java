@@ -22,10 +22,10 @@ public class Assn2 {
                     Matcher matcher = pattern.matcher(curLine);
                     boolean lineMatches = matcher.matches();
                     if(lineMatches){
-                        System.out.println(curLine + " is a finanancial quantity");
+                        System.out.println("Matched: " + curLine);
                     }
                     else{
-                        System.out.println(curLine + " is not a financial quantity");
+                        System.out.println("Not Matched: " + curLine);
                     }
                     curLine = bufferedReader.readLine();
                 }

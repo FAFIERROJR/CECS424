@@ -25,13 +25,12 @@ int main(int argc, char** argv){
         if(curLine.substr(curLine.length() - 1).compare("\r") == 0){
             curLine = curLine.substr(0, curLine.length() - 1);
         }
-        cout << curLine;
 
         if(regex_match(curLine, re)){
-            cout << " is a financial quantity" << endl;
+            cout << "Matched: " <<  curLine << endl;
         }
         else{
-            cout << " is not a financial quantity" << endl;
+            cout << "Not Matched: " << curLine << endl;
         }
     }
 }

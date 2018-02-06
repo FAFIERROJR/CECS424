@@ -19,7 +19,7 @@ while curLine != "":
     if curLine[-1] == "\n":
         curLine = curLine[0:-2]
     if re.match(pattern, curLine):
-        print curLine + " is a financial quantity"
+        print "Matched: " + curLine
     else:
-        print curLine + " is not a financial quantity"
+        print "Not Matched: " + curLine
     curLine = file.readline()
