@@ -9,7 +9,7 @@ public class Assn2 {
         //only proceed if filename given
         if(args.length > 0){
             //compile reg ex
-            Pattern pattern = Pattern.compile("\\$\\^*(0|([1-9]\\d{0,2})(,\\d{3})*)((\\.\\d{2})|$)");
+            Pattern pattern = Pattern.compile("^\\$\\^*(0|[1-9]\\d{0,2}(,\\d{3})*)(\\.\\d\\d)?$");
             
             try{
                 //open file
