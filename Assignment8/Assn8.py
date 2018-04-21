@@ -57,6 +57,10 @@ def is_winnning_combo(num_sequence, target_sum, runnning_op_sequence):
     return False
 
 def print_answers(num_sequence, winners, target_sum):
+    if(len(winners) == 0):
+        print "No solutions"
+        return
+
     print "Answers:"
     # print "length of winners: " + str(len(winners))
     answers = []
@@ -74,6 +78,17 @@ def print_answers(num_sequence, winners, target_sum):
             
     for index in range(len(answers)):
         print "    " + str(index + 1) + ": " + answers[index]
+
+def validate_input():
+    if(len(sys.argv) < 3):
+        return False
+    if(re.match("^\\d{1,}$", sys.argv[0] ) == None or re.match("^\\d{1,}$", sys.argv[1] ) == None):
+        return False
+    return True
+
+if(validate_input() == False):
+    print "Usage: python Assn8.py <number> <sum>"
+    exit()
 
 num_sequence = sys.argv[1]
 target_sum = sys.argv[2]
