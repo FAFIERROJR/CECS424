@@ -82,7 +82,7 @@ def print_answers(num_sequence, winners, target_sum):
 def validate_input():
     if(len(sys.argv) < 3):
         return False
-    if(re.match("^\\d{1,}$", sys.argv[0] ) == None or re.match("^\\d{1,}$", sys.argv[1] ) == None):
+    if(re.match("^\\d{1,}$", sys.argv[1] ) == None or re.match("^\\d{1,}$", sys.argv[2] ) == None):
         return False
     return True
 
